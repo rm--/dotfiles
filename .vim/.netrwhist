@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/renemuhl/git/python2/.git'
+let g:netrw_dirhist_2='/home/renemuhl/git/bash-scripting/svg2png'
+let g:netrw_dirhist_3='/home/renemuhl/git/simple_dialog_file_handler'
+let g:netrw_dirhist_4='/etc/apt/sources.list.d'
+let g:netrw_dirhist_5='/home/renemuhl/Dropbox/Bachelor/.git'
