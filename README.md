@@ -3,9 +3,7 @@ dotfiles
 
 My dotfiles
 
-Inspired by [AndreasLinz](https://github.com/KLINGTdotNET/dotfiles).
-
-
-
+- alias
 - bash
 - vim
+- zsh

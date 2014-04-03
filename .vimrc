@@ -5,12 +5,12 @@
 "" visual
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set number 		    "show line numbers
-syntax on		    "syntax highlighting
-colorscheme torte	"nice ones:desert,evening,koehler,pablo,torte  
-set title           "show title in console title bar
+set number 		    " show line numbers
+syntax on           " syntax highlighting
+colorscheme torte	" nice ones:desert,evening,koehler,pablo,torte  
+set title           " show title in console title bar
 set ls=2
-set ruler           "show the cursor position all the time
+set ruler           " show the cursor position all the time
 set wrap
 
 
@@ -62,4 +62,5 @@ augroup END
 "execute pathogen#infect()
 "call pathogen#helptags() " generate helptags for everything in 'runtimepath'
 "filetype plugin indent on
+
 
