@@ -16,8 +16,7 @@ alias gitall='gaa && gca && gpom'
 
 #other
 alias ..='cd ..'
-alias c='cat'
-alias cl='clear'
+alias c='clear'
 alias d='ding'
 alias gs='grep -isr '$1' '$2''
 alias l='ls --color=auto'
