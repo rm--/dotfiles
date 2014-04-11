@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/personal/dotfiles/.oh-my-zsh
+export ZSH=$HOME/personal/git/dotfiles/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="amuse"
+ZSH_THEME="myamuse"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -78,4 +78,4 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #my additions
 export TERM=xterm-256color
 export SHELL=/bin/zsh
-source ~/personal/dotfiles/.alias
+source ~/personal/git/dotfiles/.alias
