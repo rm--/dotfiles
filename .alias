@@ -13,7 +13,6 @@ alias gp='git pull'
 alias gpom='git push origin master'
 alias gitall='gaa && gca && gpom'
 
-
 #other
 alias ..='cd ..'
 alias c='clear'
@@ -21,6 +20,11 @@ alias d='ding'
 alias gs='grep -isr '$1' '$2''
 alias l='ls --color=auto'
 alias ll='ls -ahls --color=auto'
-alias h="history 30"
-alias hg="history |grep"
+alias h='history 30'
+alias hg='history |grep'
+function mkcd(){
+      mkdir -p $1
+        cd $1
+}
 alias s='sudo -s'
+
