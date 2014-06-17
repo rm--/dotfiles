@@ -79,3 +79,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM=xterm-256color
 export SHELL=/bin/zsh
 source ~/personal/git/dotfiles/.alias
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
