@@ -25,14 +25,10 @@ alias gs='grep -isr '$1' '$2''
 alias l='ls --color=auto'
 alias ll='ls -ahls --color=auto'
 alias h='history 30'
-<<<<<<< HEAD
-#alias hg='history |grep'
-=======
 alias hgrep='history |grep'
->>>>>>> 7e7958ede3767d46205c865cb03ce424facaec8b
+
 function mkcd(){
       mkdir -p $1
         cd $1
 }
 alias s='sudo -s'
-

@@ -1,0 +1,20 @@
+[ui]
+username = 
+ssh = ssh -C
+[diff]
+git = True
+showfunc = True
+[extensions]
+flow = $HOME/personal/.hgext/hgflow.py
+color =
+graphlog =
+histedit =
+mq =
+rebase =
+pager=
+progress =
+shelve =
+[pager]
+pager = LESS='FRX' less
+attend = annotate, log, diff, heads, help, in, incoming, out, outgoing, status, qdiff
+
