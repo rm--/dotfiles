@@ -78,4 +78,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #my additions
 export TERM=xterm-256color
 export SHELL=/bin/zsh
+export GIT_EDITOR=vim
+export VISUAL=vim
+export EDITOR=vim
 source ~/personal/git/dotfiles/.alias
+
