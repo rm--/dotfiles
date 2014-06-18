@@ -82,4 +82,9 @@ export GIT_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 source ~/personal/git/dotfiles/.alias
+<<<<<<< HEAD
 
+=======
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+>>>>>>> 7e7958ede3767d46205c865cb03ce424facaec8b
