@@ -120,4 +120,4 @@ export GREP_COLOR='36'
 
 export TERM=xterm-256color
 
-source .alias
+source ../alias/alias

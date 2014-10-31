@@ -1,5 +1,5 @@
 [ui]
-username = 
+username = René Muhl
 ssh = ssh -C
 [diff]
 git = True
