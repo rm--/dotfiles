@@ -1,0 +1,45 @@
+#!/bin/zsh
+
+autoload -U colors && colors
+
+if [[ $TERM == "linux" ]]; then
+    COLORS=(RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE) # doesn't work
+else
+    COLORS=(1 4 15 9 1 248 10 202)
+fi
+
+function _fg_color {
+    print %F{$1}$2%f
+}
+
+# http://zsh.sourceforge.net/Doc/Release/Expansion.html#Expansion
+setopt PROMPT_SUBST
+
+# http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
+autoload -Uz vcs_info && vcs_info
+
+# enable needed backends
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' get-revision false
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "$(_fg_color $COLORS[2] ▲)"
+zstyle ':vcs_info:*' unstagedstr "$(_fg_color $COLORS[5] ▼ )"
+zstyle ':vcs_info:*' formats "[%F{118}%b%f] %c%u"
+
+# called before generating the prompt
+precmd() { vcs_info }
+
+THEME_USER="$(_fg_color $COLORS[1] %B%n%b)"
+THEME_HOST="$(_fg_color $COLORS[2] %M)"
+THEME_PATH="$(_fg_color $COLORS[3] %~)"
+THEME_ROOT="%(!.$(_fg_color $COLORS[4] \#).$(_fg_color $COLORS[7] \#))"
+THEME_PARSER="%_"
+THEME_WEEK="$(_fg_color $COLORS[6] '%D{CW %V}')"
+THEME_DATE="$(_fg_color $COLORS[6] '%D{%d.%m.%y}')"
+THEME_TIME="$(_fg_color $COLORS[8] %D{%K:%M:%S})"
+
+PROMPT="$THEME_USER$(_fg_color $COLORS[6] " at ")$THEME_HOST$(_fg_color $COLORS[6] " in ")$THEME_PATH
+$THEME_ROOT$THEME_PARSER $ "
+
+# right prompt
+RPROMPT="\$vcs_info_msg_0_ $THEME_WEEK|$THEME_DATE|$THEME_TIME"
