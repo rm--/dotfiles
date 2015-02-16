@@ -5,9 +5,10 @@ ssh = ssh -C
 git = True
 showfunc = True
 [extensions]
-flow = $HOME/personal/.hgext/hgflow.py
+flow = path-to-hgflow.py
 color =
 graphlog =
+hgprompt = path-to-prompt.py
 histedit =
 mq =
 rebase =
