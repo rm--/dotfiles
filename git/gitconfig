@@ -12,8 +12,12 @@
 	branches = branch -a
 	cdiff = diff --cached
 	st = status -uall
+	up = checkout
 	glog = log --all --graph --decorate
 	slog = log --all --graph --decorate --pretty=oneline
 	nlog = log --name-status
+	ll = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit
+    lla = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit --all
+    lls = log --graph --decorate --pretty=format:'%C(red)%h  %C(yellow)%ad %C(red)%d%C(reset) %s %C(blue)[%an]' --abbrev-commit --date=short --all --simplify-by-decoration
 [push]
 	default = simple
