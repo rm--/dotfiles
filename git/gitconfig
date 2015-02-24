@@ -9,10 +9,13 @@
 [core]
 	excludesfile = ~/.gitignore
 [alias]
-	branches = branch -a
+	branches = branch -avv
 	cdiff = diff --cached
-	st = status -uall
+	co = checkout
 	up = checkout
+	in = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate HEAD..FETCH_HEAD'
+	out = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate FETCH_HEAD..HEAD'
+	st = status -uall
 	glog = log --all --graph --decorate
 	slog = log --all --graph --decorate --pretty=oneline
 	nlog = log --name-status
