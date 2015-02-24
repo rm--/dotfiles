@@ -19,7 +19,7 @@ dependencies
 mercurial
 +++++++++
 
-* prompt.zsh needs `prompt.py`_ 
+* hgprompt needs `prompt.py`_ 
 * hgflow needs `hgflow.py`_ 
 
 .. _prompt.py: http://bitbucket.org/sjl/hg-prompt/
@@ -73,3 +73,7 @@ TODOs:
 * add git stages to prompt
 * add installation routine
 * zsh syntax highlighting?
+* improve vimrc
+* add tigrc
+* adding htoprc?
+* check hg out/in equivalent in git
