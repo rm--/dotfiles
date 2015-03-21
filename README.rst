@@ -76,4 +76,4 @@ TODOs:
 * improve vimrc
 * add tigrc
 * adding htoprc?
-* check hg out/in equivalent in git
+* add autocompletion
