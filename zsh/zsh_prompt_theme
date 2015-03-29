@@ -33,14 +33,15 @@ THEME_WEEK="$(_fg_color $COLORS[6] '%D{CW %V}')"
 THEME_DATE="$(_fg_color $COLORS[6] '%D{%d.%m.%y}')"
 THEME_TIME="$(_fg_color $COLORS[8] %D{%K:%M:%S})"
 
-
 # Modify the colors and symbols in these variables as desired.
 GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
 GIT_PROMPT_PREFIX="%{$fg[green]%} [%{$reset_color%}"
 GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
 GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
 GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
-
+GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}u%{$reset_color%}"
+GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}m%{$reset_color%}"
+GIT_PROMPT_STAGED="%{$fg_bold[green]%}s%{$reset_color%}"
 
 # http://zsh.sourceforge.net/Doc/Release/Expansion.html#Expansion
 setopt PROMPT_SUBST
@@ -64,6 +65,18 @@ function parse_git_state() {
   local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
   if [ "$NUM_BEHIND" -gt 0 ]; then
     GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
+  fi
+
+  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED
+  fi
+
+  if ! git diff --quiet 2> /dev/null; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_MODIFIED
+  fi
+
+  if ! git diff --cached --quiet 2> /dev/null; then
+    GIT_STATE=$GIT_STATE$GIT_PROMPT_STAGED
   fi
 
   if [[ -n $GIT_STATE ]]; then
