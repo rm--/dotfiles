@@ -12,19 +12,14 @@ function _fg_color {
     print %F{$1}$2%f
 }
 
-# http://zsh.sourceforge.net/Doc/Release/Expansion.html#Expansion
-setopt PROMPT_SUBST
-
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
 autoload -Uz vcs_info && vcs_info
 
 # enable needed backends
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' get-revision false
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr "$(_fg_color $COLORS[2] ▲)"
-zstyle ':vcs_info:*' unstagedstr "$(_fg_color $COLORS[5] ▼ )"
-zstyle ':vcs_info:*' formats "[%F{118}%b%f] %c%u"
+# zstyle ':vcs_info:*' check-for-changes true
+# zstyle ':vcs_info:*' formats "[%F{118}%b%f] %c%u"
 
 # called before generating the prompt
 precmd() { vcs_info }
@@ -38,8 +33,59 @@ THEME_WEEK="$(_fg_color $COLORS[6] '%D{CW %V}')"
 THEME_DATE="$(_fg_color $COLORS[6] '%D{%d.%m.%y}')"
 THEME_TIME="$(_fg_color $COLORS[8] %D{%K:%M:%S})"
 
-PROMPT="$THEME_USER$(_fg_color $COLORS[6] " at ")$THEME_HOST$(_fg_color $COLORS[6] " in ")$THEME_PATH
+
+# Modify the colors and symbols in these variables as desired.
+GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
+GIT_PROMPT_PREFIX="%{$fg[green]%} [%{$reset_color%}"
+GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
+GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
+GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
+
+
+# http://zsh.sourceforge.net/Doc/Release/Expansion.html#Expansion
+setopt PROMPT_SUBST
+
+# Show Git branch/tag, or name-rev if on detached head
+function parse_git_branch() {
+  (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
+}
+
+# Show different symbols as appropriate for various Git repository states
+function parse_git_state() {
+
+  # Compose this value via multiple conditional appends.
+  local GIT_STATE=""
+
+  local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_AHEAD" -gt 0 ]; then
+    GIT_STATE=$GIT_STATE${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}
+  fi
+
+  local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+  if [ "$NUM_BEHIND" -gt 0 ]; then
+    GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
+  fi
+
+  if [[ -n $GIT_STATE ]]; then
+    echo "$GIT_PROMPT_PREFIX$GIT_STATE$GIT_PROMPT_SUFFIX"
+  fi
+
+}
+
+# If inside a Git repository, print its branch and state
+function git_prompt_string() {
+  local git_where="$(parse_git_branch)"
+  [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}%{$reset_color%}$(parse_git_state)"
+}
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
+
+PROMPT="$(virtualenv_info)
+$THEME_USER$(_fg_color $COLORS[6] " at ")$THEME_HOST$(_fg_color $COLORS[6] " in ")$THEME_PATH
 $THEME_ROOT$THEME_PARSER $ "
 
 # right prompt
-RPROMPT="\$vcs_info_msg_0_ $THEME_WEEK|$THEME_DATE|$THEME_TIME"
+RPROMPT=' %{$reset_color%}$(git_prompt_string) $THEME_WEEK|$THEME_DATE|$THEME_TIME'
