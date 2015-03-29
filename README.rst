@@ -25,13 +25,6 @@ mercurial
 .. _prompt.py: http://bitbucket.org/sjl/hg-prompt/
 .. _hgflow.py: https://bitbucket.org/yujiewu/hgflow/
 
-zsh
-+++
-
-* `oh-my-zsh`_ 
-
-.. _oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
-
 
 
 not rly dot, but here are the ST2 plugins I like:
@@ -58,6 +51,9 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 .. _Steve Losh: https://github.com/sjl/
 
 
+**License: MIT, for details see LICENSE.txt**
+
+
 
 **still in development...**
 
@@ -68,12 +64,9 @@ TODOs:
 * add bashrc config
 * source aliases in bashrc
 * check brew settings and tools
-* add git stages to prompt
 * add installation routine
-* zsh syntax highlighting?
 * improve vimrc
 * add tigrc
 * adding htoprc?
 * add autocompletion
-* add preview with tt2git
-* add correct license
+* add preview with tty2git
