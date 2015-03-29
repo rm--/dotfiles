@@ -65,11 +65,9 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 TODOs:
 
 * test all files in different environments (Debian, Ubuntu, Mac OS X)
-* decide: zsh w/ or w/o oh-my-zsh
 * add bashrc config
 * source aliases in bashrc
 * check brew settings and tools
-* when using oh-my-zsh then add as submodule to repo
 * add git stages to prompt
 * add installation routine
 * zsh syntax highlighting?
@@ -77,3 +75,5 @@ TODOs:
 * add tigrc
 * adding htoprc?
 * add autocompletion
+* add preview with tt2git
+* add correct license
