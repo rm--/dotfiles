@@ -66,7 +66,7 @@ TODOs:
 * check brew settings and tools
 * add installation routine
 * improve vimrc
-* add tigrc
+* add tigrc (man tigrc)
 * adding htoprc?
 * add autocompletion
 * add preview with tty2git
