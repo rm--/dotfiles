@@ -121,3 +121,21 @@ export GREP_COLOR='36'
 export TERM=xterm-256color
 
 source ../alias/alias
+
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+source ~/.pyenv/completions/pyenv.bash
+
+#source ~/.pyenv/shims/virtualenvwrapper.sh
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+
+# pyenv
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+if hash pyenv 2>/dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+    pyenv virtualenvwrapper
+fi
