@@ -9,7 +9,7 @@
 [core]
 	excludesfile = ~/.gitignore
 [alias]
-	branches = branch -a
+	branches = branch -avv
 	cdiff = diff --cached
 	co = checkout
 	up = checkout
