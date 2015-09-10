@@ -5,7 +5,6 @@ My dotfiles
 including dots for:
 """""""""""""""""""
 
-* alias
 * bash
 * git
 * mercurial
@@ -26,9 +25,8 @@ mercurial
 .. _hgflow.py: https://bitbucket.org/yujiewu/hgflow/
 
 
-
-not rly dot, but here are the ST2 plugins I like:
-"""""""""""""""""""""""""""""""""""""""""""""""""
+not rly dot: ST2 plugins I like:
+""""""""""""""""""""""""""""""""
 
 * `PackageControl`_ 
 * `DashDoc`_ 
@@ -36,13 +34,14 @@ not rly dot, but here are the ST2 plugins I like:
 * `editorconfig-sublime`_ 
 * `sublime-rst-completion`_ 
 * `Sublime Text 2/3 Markdown Preview`_ 
+* `Spacegray Color theme`_
 
+.. _Spacegray Color theme: https://github.com/kkga/spacegray
 .. _PackageControl: https://packagecontrol.io/
 .. _DashDoc: https://github.com/farcaller/DashDoc
 .. _SublimePrettyJson: https://github.com/dzhibas/SublimePrettyJson
 .. _editorconfig-sublime: https://github.com/sindresorhus/editorconfig-sublime
 .. _`sublime-rst-completion`: https://github.com/mgaitan/sublime-rst-completion
-
 .. _Sublime Text 2/3 Markdown Preview: https://github.com/revolunet/sublimetext-markdown-preview
 
 
@@ -63,8 +62,7 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 
 # TODOs:
 * [ ] test all files in different environments (Debian, Ubuntu, Mac OS X)
-* [ ] add bashrc config
-* [ ] source aliases in bashrc
+* [ ] improve bashrc config
 * [ ] check brew settings and tools
 * [ ] add installation routine
 * [ ] improve vimrc
@@ -72,9 +70,6 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 * [ ] adding htoprc?
 * [ ] add autocompletion (git, Django)
 * [ ] add preview with tty2git
-* [ ] add history search
-* [ ] add sublime snippet for pdb
-* [ ] add sublime settings (ruler, colortheme...)
 * [ ] add new sublime plugins???
 * [ ] add ghc-pkg-reset/-clean... for mac!!!
 * [ ] ignore case on zsh
