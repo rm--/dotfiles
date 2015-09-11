@@ -1,27 +1,30 @@
-[user]
-	name = René Muhl
-	email = 
-[color]
-	diff = auto
-	branch = auto
-	interactive = auto
-	status = auto
-[core]
-	excludesfile = ~/.gitignore
 [alias]
 	branches = branch -avv
-	cdiff = diff --cached
+	remotes = remote -v
 	co = checkout
-	up = checkout
-	in = !git fetch && git slog ..@{u}
-	out = !git fetch && git slog @{u}..
+	df = diff
+	dfc = diff --cached
 	st = status -uall
+	pp = !sh -c 'git push -n && git diff --stat origin `git rev-parse --abbrev-ref HEAD`'
 	glog = log --all --graph --decorate
-	slog = log --pretty='%C(auto)%h %d %s (%ar by %an)'
-	nlog = log --name-status --decorate
+	slog = log --all --graph --decorate --pretty=oneline
+	nlog = log --name-status
 	ll = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit
 	lla = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit --all
 	lls = log --graph --decorate --pretty=format:'%C(red)%h  %C(yellow)%ad %C(red)%d%C(reset) %s %C(blue)[%an]' --abbrev-commit --date=short --all --simplify-by-decoration
-	remotes = remote -v
+	in = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate HEAD..FETCH_HEAD'
+	out = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate FETCH_HEAD..HEAD'
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	pager = less
 [push]
 	default = simple
+[user]
+	email = %{{EMAIL}}%
+	name = %{{USERNAME}}%
