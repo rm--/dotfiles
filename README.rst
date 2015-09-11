@@ -60,16 +60,18 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 **still in development...**
 
 
-# TODOs:
-* [ ] test all files in different environments (Debian, Ubuntu, Mac OS X)
-* [ ] improve bashrc config
-* [ ] check brew settings and tools
-* [ ] add installation routine
-* [ ] improve vimrc
-* [ ] add tigrc (man tigrc)
-* [ ] adding htoprc?
-* [ ] add autocompletion (git, Django)
-* [ ] add preview with tty2git
-* [ ] add new sublime plugins???
-* [ ] add ghc-pkg-reset/-clean... for mac!!!
-* [ ] ignore case on zsh
+TODOs:
+++++++
+
+- [ ] test all files in different environments (Debian, Ubuntu, Mac OS X)
+- [ ] improve bashrc config
+- [ ] check brew settings and tools
+- [ ] add installation routine
+- [ ] improve vimrc
+- [ ] add tigrc (man tigrc)
+- [ ] adding htoprc?
+- [ ] add autocompletion (git, Django)
+- [ ] add preview with tty2git
+- [ ] add new sublime plugins???
+- [ ] add ghc-pkg-reset/-clean... for mac!!!
+- [ ] ignore case on zsh
