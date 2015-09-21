@@ -1,6 +1,21 @@
 My dotfiles
 -----------
 
+installation:
+"""""""""""""
+
+1. Clone the repository
+
+`git clone https://github.com/rm--/dotfiles`
+
+2. Backup your files and install my dots with
+
+`make install-dots`
+
+3. (if you don't like it and want you old dots back)
+
+`make restore`
+
 
 including dots for:
 """""""""""""""""""
@@ -63,15 +78,15 @@ inspired by dotfiles of `Andreas Linz`_, `Mark Nichols`_,  `Markus Zapke-Gründe
 TODOs:
 ++++++
 
-- [ ] test all files in different environments (Debian, Ubuntu, Mac OS X)
-- [ ] improve bashrc config
-- [ ] check brew settings and tools
-- [ ] add installation routine
-- [ ] improve vimrc
-- [ ] add tigrc (man tigrc)
-- [ ] adding htoprc?
-- [ ] add autocompletion (git, Django)
-- [ ] add preview with tty2git
-- [ ] add new sublime plugins???
-- [ ] add ghc-pkg-reset/-clean... for mac!!!
-- [ ] ignore case on zsh
+- test all files in different environments (Debian, Ubuntu, Mac OS X)
+- improve bashrc config
+- check brew settings and tools
+- add installation routine
+- improve vimrc
+- add tigrc (man tigrc)
+- adding htoprc?
+- add autocompletion (git, Django)
+- add preview with tty2git
+- add new sublime plugins???
+- add ghc-pkg-reset/-clean... for mac!!!
+- ignore case on zsh
