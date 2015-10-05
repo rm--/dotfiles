@@ -7,7 +7,6 @@ DOT_FILES_DIR=$HOME'/.config/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
 
-# User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # bind keys for word jumping
@@ -32,5 +31,15 @@ elif [ "$(uname -a | grep -i linux)" ]; then
 fi
 source $DOT_FILES_DIR'/alias/alias_general'
 
-
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
 source /usr/local/bin/virtualenvwrapper.sh
+
+# pyenv
+export PATH=~/.pyenv/shims:~/.pyenv/bin:$PATH
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)";
+  pyenv virtualenvwrapper
+fi
