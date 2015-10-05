@@ -5,9 +5,6 @@ ZSH_THEME="zsh_prompt_theme"
 # Path to your dotfiles
 DOT_FILES_DIR=$HOME'/.config/dotfiles'
 
-# Path to your oh-my-zsh installation
-export ZSH=$DOT_FILES_DIR'/oh-my-zsh'
-
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
 
 # User configuration
