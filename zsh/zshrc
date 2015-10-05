@@ -1,6 +1,8 @@
 #!/bin/zsh
 
 ZSH_THEME="zsh_prompt_theme"
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
 # Path to your dotfiles
 DOT_FILES_DIR=$HOME'/.config/dotfiles'
