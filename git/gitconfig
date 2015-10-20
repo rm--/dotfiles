@@ -24,7 +24,7 @@
 	editor = vim
 	pager = less
 [push]
-	default = simple
+	default = current
 [user]
 	email = %{{EMAIL}}%
 	name = %{{USERNAME}}%
