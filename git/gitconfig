@@ -2,9 +2,12 @@
 	branches = branch -avv
 	remotes = remote -v
 	co = checkout
+	cod = checkout develop
+	com = checkout master
 	df = diff
 	dfc = diff --cached
 	st = status -uall
+	p == pull
 	pp = !sh -c 'git push -n && git diff --stat origin `git rev-parse --abbrev-ref HEAD`'
 	glog = log --all --graph --decorate
 	slog = log --all --graph --decorate --pretty=oneline
