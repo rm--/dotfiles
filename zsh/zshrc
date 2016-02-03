@@ -5,7 +5,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Path to your dotfiles
-DOT_FILES_DIR=$HOME'/.config/dotfiles'
+DOT_FILES_DIR=$HOME'/projects/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
 
@@ -29,7 +29,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [ "$(uname -a | grep -i darwin)" ]; then
     source $DOT_FILES_DIR/'alias/alias_osx'
 elif [ "$(uname -a | grep -i linux)" ]; then
-    source $DOT_FILES_DIR/'alias/.alias_linux'
+    source $DOT_FILES_DIR/'alias/alias_linux'
 fi
 source $DOT_FILES_DIR'/alias/alias_general'
 
