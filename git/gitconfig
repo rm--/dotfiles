@@ -23,9 +23,11 @@
 	interactive = auto
 	status = auto
 [core]
-	excludesfile = ~/.gitignore_global
 	editor = vim
+	excludesfile = ~/.gitignore
 	pager = less
+[merge]
+	tool = meld
 [push]
 	default = current
 [user]
