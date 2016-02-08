@@ -33,3 +33,11 @@
 [user]
 	email = %{{EMAIL}}%
 	name = %{{USERNAME}}%
+[tig]
+	main-view = \
+		date:short \
+		id:yes,color \
+		author:full \
+		commit-title:graph=v2,refs=yes
+	ignore-case = true
+	line-graphics = utf-8
