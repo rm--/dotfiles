@@ -27,12 +27,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 
 # load aliases
 if [ "$(uname -a | grep -i darwin)" ]; then
-    source $DOT_FILES_DIR/'alias/alias_osx'
+    source $DOT_FILES_DIR/'alias/osx'
 elif [ "$(uname -a | grep -i linux)" ]; then
-    source $DOT_FILES_DIR/'alias/alias_linux'
+    source $DOT_FILES_DIR/'alias/linux'
 fi
-source $DOT_FILES_DIR'/alias/alias_general'
-
+source $DOT_FILES_DIR'/alias/general'
+source $DOT_FILES_DIR'/alias/work'
 
 source $DOT_FILES_DIR'/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 

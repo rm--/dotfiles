@@ -1,0 +1,45 @@
+#haskell
+alias yd='yesod devel'
+
+#python
+alias py='python'
+alias py3='python3'
+
+#gpg
+alias gpge='gpg --encrypt -a --recipient $1 $2'
+alias gpgd='gpg --decrypt $1'
+
+#git
+alias g='git'
+alias t='tig'
+remove_local_merged_branches(){
+  local red=`tput setaf 1`
+  local green=`tput setaf 2`
+  local bold=`tput bold`
+  local reset=`tput sgr0`
+
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  for branch in $(git branch --merged | cut -c3-)
+    do
+      if [[ $branch = $current_branch ]]; then
+        continue
+      fi
+      echo "Branch ${bold}$branch${reset} is already merged into ${bold}$current_branch${reset}."
+      echo "Would you like to delete it? ${green}[Y]es${reset}/${red}[N]o${reset} "
+      read REPLY
+      if [[ $REPLY =~ ^[Yy] ]]; then
+        git branch -d $branch
+      fi
+  done
+}
+
+#other
+alias ..='cd ..'
+alias gs='grep -isr '$1' '$2''
+alias hgrep='history |grep'
+alias ll='ls -ahls'
+
+function mkcd(){
+      mkdir -p $1
+        cd $1
+}

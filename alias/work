@@ -1,0 +1,5 @@
+alias precommit='tox -e isort,flake8'
+function branch() {
+        python -c "name= print('feature/{}-{}'.format('$1','$2'.lower().replace(' ','-')))"
+}
+function maketest() {make test TEST_ARGS="--reuse-db -k "$@"";}

@@ -24,6 +24,7 @@
 	ssave = !sh -c 'git stash save "${1}"' -
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -uall
+	updatedev=!sh -c 'git cod && git p && git co -'
 [color]
 	branch = auto
 	diff = auto
