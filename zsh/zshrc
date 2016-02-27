@@ -17,11 +17,11 @@ bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
 
 # set env variables
-export TERM=xterm-256color
-export SHELL=/bin/zsh
-export GIT_EDITOR=vim
-export VISUAL=vim
 export EDITOR=vim
+export GIT_EDITOR=vim
+export SHELL=/bin/zsh
+export TERM=xterm-256color
+export VISUAL=vim
 export WORKON_HOME=$HOME/.virtualenvs
 
 
@@ -33,12 +33,20 @@ elif [ "$(uname -a | grep -i linux)" ]; then
 fi
 source $DOT_FILES_DIR'/alias/alias_general'
 
-# virtualenvwrapper
+
+source $DOT_FILES_DIR'/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+
+
+eval $(thefuck --alias)
+
+
+# python
+## virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 source /usr/local/bin/virtualenvwrapper.sh
 
-# pyenv
+## pyenv
 export PATH=~/.pyenv/shims:~/.pyenv/bin:$PATH
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 if which pyenv > /dev/null; then
@@ -46,10 +54,7 @@ if which pyenv > /dev/null; then
   pyenv virtualenvwrapper
 fi
 
-eval $(thefuck --alias)
 
-
-#haskell
+# haskell
 export PATH=/opt/ghc/7.10.1/bin/:/opt/cabal/1.22/bin/:$PATH:/usr/local/sbin:$HOME/bin
 export PATH=.cabal-sandbox/bin:$PATH
-

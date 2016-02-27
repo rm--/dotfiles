@@ -6,7 +6,7 @@ installation:
 
 1. Clone the repository
 
-`git clone https://github.com/rm--/dotfiles`
+`git clone --recursive https://github.com/rm--/dotfiles`
 
 2. Backup your files and install my dots with
 
@@ -83,10 +83,8 @@ TODOs:
 - check brew settings and tools
 - add installation routine
 - improve vimrc
-- add tigrc (man tigrc)
 - adding htoprc?
 - add autocompletion (git, Django)
 - add preview with tty2git
 - add new sublime plugins???
-- add ghc-pkg-reset/-clean... for mac!!!
 - ignore case on zsh
