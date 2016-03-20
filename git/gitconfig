@@ -43,7 +43,7 @@
 	name = %{{USERNAME}}%
 [tig]
 	main-view = \
-		date:short \
+		date:default \
 		id:yes,color \
 		author:full \
 		commit-title:graph=v2,refs=yes
