@@ -8,6 +8,9 @@ HISTFILE=~/.zsh_history
 DOT_FILES_DIR=$HOME'/projects/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
+# zsh plugins
+source $DOT_FILES_DIR'/zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+source $DOT_FILES_DIR'/zsh/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh'
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -36,7 +39,6 @@ fi
 source $DOT_FILES_DIR'/alias/general'
 source $DOT_FILES_DIR'/alias/work'
 
-source $DOT_FILES_DIR'/tools/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 
 
 eval $(thefuck --alias)
