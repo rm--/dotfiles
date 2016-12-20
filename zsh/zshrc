@@ -41,7 +41,6 @@ source $DOT_FILES_DIR'/alias/work'
 
 
 
-eval $(thefuck --alias)
 
 
 # python
@@ -58,6 +57,7 @@ if which pyenv > /dev/null; then
   pyenv virtualenvwrapper
 fi
 
+eval "$(thefuck --alias)"
 
 # haskell
 export PATH=/opt/ghc/7.10.1/bin/:/opt/cabal/1.22/bin/:$PATH:/usr/local/sbin:$HOME/bin
