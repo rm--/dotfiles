@@ -18,6 +18,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 bindkey -e
 bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
+bindkey '^[[3~' delete-char
 
 # set env variables
 export EDITOR=vim
