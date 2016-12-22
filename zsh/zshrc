@@ -9,6 +9,10 @@ DOT_FILES_DIR=$HOME'/projects/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
 # zsh plugins
+
+plugins=(… $DOT_FILES_DIR'/zsh/submodules/zsh-completions')
+autoload -U compinit && compinit
+
 source $DOT_FILES_DIR'/zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 source $DOT_FILES_DIR'/zsh/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh'
 
