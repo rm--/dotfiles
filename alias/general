@@ -1,15 +1,17 @@
-#haskell
+# haskell
 alias yd='yesod devel'
 
-#python
+# python
 alias py='python'
 alias py3='python3'
+alias precommit='tox -e isort,flake8'
+function maketest() {make test TEST_ARGS="--reuse-db -k "$@"";}
 
-#gpg
+# gpg
 alias gpge='gpg --encrypt -a --recipient $1 $2'
 alias gpgd='gpg --decrypt $1'
 
-#git
+# git
 alias g='git'
 alias t='tig'
 remove_local_merged_branches(){
@@ -33,13 +35,16 @@ remove_local_merged_branches(){
   done
 }
 
-#other
+# other
 alias ..='cd ..'
 alias gs='grep -isr '$1' '$2''
-alias hgrep='history |grep'
 alias ll='ls -ahls'
 
 function mkcd(){
       mkdir -p $1
         cd $1
+}
+
+function branch() {
+        python -c "name= print('feature/{}-{}'.format('$1','$2'.lower().replace(' ','-')))"
 }

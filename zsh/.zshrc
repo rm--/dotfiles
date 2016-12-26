@@ -42,10 +42,6 @@ elif [ "$(uname -a | grep -i linux)" ]; then
     source $DOT_FILES_DIR/'alias/linux'
 fi
 source $DOT_FILES_DIR'/alias/general'
-source $DOT_FILES_DIR'/alias/work'
-
-
-
 
 
 # python
