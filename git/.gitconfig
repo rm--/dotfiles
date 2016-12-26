@@ -1,4 +1,5 @@
 [alias]
+    aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
 	amend = commit -a --amend
 	branches = branch -avv
 	co = checkout
@@ -39,8 +40,15 @@
 [push]
 	default = current
 [user]
-	email = %{{EMAIL}}%
-	name = %{{USERNAME}}%
+	email = rmuhl@mailbox.org
+	name = René Muhl
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
+
 [tig]
 	main-view = \
 		date:default \
