@@ -1,0 +1,12 @@
+{
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "draw_white_space": "all",
+    "font_size": 16,
+    "theme": "Material-Theme.sublime-theme",
+    "rulers":
+    [
+        72, //doc strings
+        99  //code
+    ],
+    "translate_tabs_to_spaces": true
+}
