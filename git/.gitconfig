@@ -48,7 +48,6 @@
     fsckobjects = true
 [receive]
     fsckObjects = true
-
 [tig]
 	main-view = \
 		date:default \
