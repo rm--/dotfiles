@@ -1,3 +1,7 @@
+# java
+## clone and build from https://github.com/albertlatacz/java-repl
+alias javarepl='java -jar ~/used_repos/java-repl/build/libs/javarepl-dev.jar'
+
 # haskell
 alias yd='yesod devel'
 
