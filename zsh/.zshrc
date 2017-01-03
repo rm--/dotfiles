@@ -61,8 +61,7 @@ fi
 eval "$(thefuck --alias)"
 
 # haskell
-export PATH=/opt/ghc/7.10.1/bin/:/opt/cabal/1.22/bin/:$PATH:/usr/local/sbin:$HOME/bin
-export PATH=.cabal-sandbox/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
