@@ -1,6 +1,6 @@
 # My dotfiles
 
-## including
+## Including
 
 * bash
 * git
@@ -8,19 +8,13 @@
 * zsh
 * sublime text 3
 
-## installation
-
-1. Clone the repository
+## Clone the repository
 
 `git clone --recursive https://github.com/rm--/dotfiles`
 
-2. Backup your dots and install my dots with
+## Installation (without backup)
 
-`make install-dots`
-
-3. (If you don't like it and want you old dots back), run
-
-`make restore`
+`make install`
 
 
 inspired by these dotfiles
@@ -32,11 +26,3 @@ inspired by these dotfiles
 
 
 **License: MIT, for details see LICENSE.txt**
-
-
-## todo
-
-- check brew settings and tools
-- improve vimrc
-- add preview with tty2git
-- ignore case on zsh
