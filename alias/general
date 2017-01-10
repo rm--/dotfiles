@@ -42,7 +42,6 @@ remove_local_merged_branches(){
 # other
 alias ..='cd ..'
 alias gs='grep -isr '$1' '$2''
-alias ll='ls -ahls'
 
 function mkcd(){
       mkdir -p $1

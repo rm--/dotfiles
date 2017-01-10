@@ -1,2 +1,13 @@
 #brew
 alias bubu='brew update && brew upgrade'
+
+colorflag="-G"
+
+# List all files colorized in long format
+alias l="ls -ahlsF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Solarized colorscheme for OS X `ls` environment variable:
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
