@@ -35,6 +35,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 	pager = less
+	autocrlf = input
 [merge]
 	tool = meld
 [push]
