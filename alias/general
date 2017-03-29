@@ -1,6 +1,8 @@
+#!/bin/sh
+
 # java
 ## clone and build from https://github.com/albertlatacz/java-repl
-alias javarepl='java -jar ~/used_repos/java-repl/build/libs/javarepl-dev.jar'
+alias javarepl='java -jar ~/used_projects/java-repl/build/libs/javarepl-dev.jar'
 
 # haskell
 alias yd='yesod devel'
@@ -42,12 +44,17 @@ remove_local_merged_branches(){
 # other
 alias ..='cd ..'
 alias gs='grep -isr '$1' '$2''
+alias inet='ping heise.de'
+alias sc='shellcheck -s bash'
 
 function mkcd(){
       mkdir -p $1
         cd $1
 }
 
-function branch() {
-        python -c "name= print('feature/{}-{}'.format('$1','$2'.lower().replace(' ','-')))"
+# git checkout new branch from $1 as issue tag and $2 as issue name.
+function nb() {
+        local BRANCHNAME
+        BRANCHNAME=$(echo "$1"-"$2" | sed -e "s/ /-/g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g; ")
+        git checkout -b "$BRANCHNAME" develop
 }
