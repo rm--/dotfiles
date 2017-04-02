@@ -11,34 +11,37 @@ alias yd='yesod devel'
 alias py='python'
 alias py3='python3'
 alias precommit='tox -e isort,flake8'
-function maketest() {make test TEST_ARGS="--reuse-db -k "$@"";}
-
-# gpg
-alias gpge='gpg --encrypt -a --recipient $1 $2'
-alias gpgd='gpg --decrypt $1'
 
 # git
 alias g='git'
 alias t='tig'
 remove_local_merged_branches(){
-  local red=`tput setaf 1`
-  local green=`tput setaf 2`
-  local bold=`tput bold`
-  local reset=`tput sgr0`
+  local red=$(tput setaf 1)
+  local green=$(tput setaf 2)
+  local bold=$(tput bold)
+  local reset=$(tput sgr0)
 
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   for branch in $(git branch --merged | cut -c3-)
     do
-      if [[ $branch = $current_branch ]]; then
+      if [[ $branch = "$current_branch" ]]; then
         continue
       fi
       echo "Branch ${bold}$branch${reset} is already merged into ${bold}$current_branch${reset}."
       echo "Would you like to delete it? ${green}[Y]es${reset}/${red}[N]o${reset} "
-      read REPLY
+      read -r REPLY
       if [[ $REPLY =~ ^[Yy] ]]; then
-        git branch -d $branch
+        git branch -d "$branch"
       fi
   done
+}
+
+# gpg
+function gpge {
+  gpg --encrypt -a --recipient "$1" "$2"
+}
+function gpgd {
+  gpg --decrypt "$1"
 }
 
 # other
@@ -48,8 +51,7 @@ alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
 
 function mkcd(){
-      mkdir -p $1
-        cd $1
+      mkdir -p "$1" && cd "$1"
 }
 
 # git checkout new branch from $1 as issue tag and $2 as issue name.
