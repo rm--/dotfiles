@@ -43,7 +43,7 @@ remove_local_merged_branches(){
 
 # other
 alias ..='cd ..'
-alias gs='grep -isr '$1' '$2''
+alias rg='rg --hidden'
 alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
 

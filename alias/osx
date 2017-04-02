@@ -11,3 +11,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 # Solarized colorscheme for OS X `ls` environment variable:
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+
+# common lisp readline support
+alias sbcl='rlwrap sbcl'
