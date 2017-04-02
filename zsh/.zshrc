@@ -37,7 +37,7 @@ export LANG=en_US.UTF-8
 
 # load aliases
 if [ "$(uname -a | grep -i darwin)" ]; then
-    source $DOT_FILES_DIR/'alias/osx'
+    source $DOT_FILES_DIR/'alias/macOs'
 elif [ "$(uname -a | grep -i linux)" ]; then
     source $DOT_FILES_DIR/'alias/linux'
 fi
