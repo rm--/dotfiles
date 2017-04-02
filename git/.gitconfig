@@ -36,8 +36,11 @@
 	excludesfile = ~/.gitignore
 	pager = less
 	autocrlf = input
+[diff]
+    renameLimit = 999999
 [merge]
 	tool = meld
+    renameLimit = 999999
 [push]
 	default = current
 [user]
