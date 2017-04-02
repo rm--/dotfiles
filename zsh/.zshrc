@@ -1,15 +1,15 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 
 ZSH_THEME="zsh_prompt_theme"
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Path to your dotfiles
-DOT_FILES_DIR=$HOME'/projects/dotfiles'
+DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
-# zsh plugins
 
+# zsh plugins
 plugins=(… $DOT_FILES_DIR'/zsh/submodules/zsh-completions')
 autoload -U compinit && compinit
 
@@ -27,7 +27,7 @@ bindkey '^[[3~' delete-char
 # set env variables
 export EDITOR=vim
 export GIT_EDITOR=vim
-export SHELL=/bin/zsh
+export SHELL=/usr/local/bin/zsh
 export TERM=xterm-256color
 export VISUAL=vim
 export WORKON_HOME=$HOME/.virtualenvs
@@ -64,4 +64,7 @@ eval "$(thefuck --alias)"
 export PATH=~/.local/bin:$PATH
 
 # java
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# javascript
++export PATH="$HOME/.npm-packages/bin:$PATH"
