@@ -25,6 +25,7 @@
 	ssave = !sh -c 'git stash save "${1}"' -
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -uall
+    unstage = reset HEAD
 	updatedev=!sh -c 'git cod && git p && git co -'
 [color]
 	branch = auto
@@ -38,9 +39,15 @@
 	autocrlf = input
 [diff]
     renameLimit = 999999
+    tool = meld
+[difftool "meld"]
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = meld
+    conflictstyle = diff3
     renameLimit = 999999
+    tool = meld
+[mergetool "meld"]
+    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [push]
 	default = current
 [user]
