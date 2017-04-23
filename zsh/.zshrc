@@ -60,6 +60,10 @@ fi
 
 eval "$(thefuck --alias)"
 
+# golang
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
 # haskell
 export PATH=~/.local/bin:$PATH
 
