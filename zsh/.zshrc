@@ -24,6 +24,8 @@ bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
 bindkey '^[[3~' delete-char
 
+eval "$(thefuck --alias)"
+
 # set env variables
 export EDITOR=vim
 export GIT_EDITOR=vim
@@ -43,6 +45,18 @@ elif [ "$(uname -a | grep -i linux)" ]; then
 fi
 source $DOT_FILES_DIR'/alias/general'
 
+# golang
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
+# haskell
+export PATH=~/.local/bin:$PATH
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# javascript
+export PATH="$HOME/.npm-packages/bin:$PATH"
 
 # python
 ## virtualenvwrapper
@@ -57,18 +71,3 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)";
   pyenv virtualenvwrapper
 fi
-
-eval "$(thefuck --alias)"
-
-# golang
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
-
-# haskell
-export PATH=~/.local/bin:$PATH
-
-# java
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# javascript
-export PATH="$HOME/.npm-packages/bin:$PATH"
