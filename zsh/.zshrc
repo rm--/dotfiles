@@ -46,8 +46,8 @@ fi
 source $DOT_FILES_DIR'/alias/general'
 
 # golang
-export GOROOT=$HOME/go
-export PATH=$PATH:$GOROOT/bin
+export GOPATH="${HOME}/.go"
+export PATH=${PATH}:/usr/local/go/bin
 
 # haskell
 export PATH=~/.local/bin:$PATH
