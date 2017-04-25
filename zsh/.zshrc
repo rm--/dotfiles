@@ -9,9 +9,13 @@ DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
 source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
 
-# zsh plugins
+# command-line completion
+## zsh
 plugins=(… $DOT_FILES_DIR'/zsh/submodules/zsh-completions')
-autoload -U compinit && compinit
+
+## docker
+fpath=(${DOT_FILES_DIR}/zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
 
 source $DOT_FILES_DIR'/zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 source $DOT_FILES_DIR'/zsh/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh'
