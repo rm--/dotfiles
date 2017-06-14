@@ -57,6 +57,7 @@ function mkcd(){
 # git checkout new branch from $1 as issue tag and $2 as issue name.
 function nb() {
         local BRANCHNAME
-        BRANCHNAME=$(echo "$1"-"$2" |  tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
+        BRANCHNAME=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
+        BRANCHNAME=$(echo "$1"-"$BRANCHNAME")
         git checkout -b "$BRANCHNAME" develop
 }
