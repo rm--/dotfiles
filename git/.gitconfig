@@ -19,13 +19,14 @@
 	pp = !sh -c 'git push -n && git diff --stat origin `git rev-parse --abbrev-ref HEAD`'
 	ppp = !sh -c 'git push -n && git diff origin `git rev-parse --abbrev-ref HEAD`'
 	remotes = remote -v
+	rb = rebase -i
 	sapply = !sh -c 'git stash apply stash^{/$*}' -
 	slist = stash list
 	slog = log --all --graph --decorate --pretty=oneline
 	ssave = !sh -c 'git stash save "${1}"' -
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -uall
-    unstage = reset HEAD
+	unstage = reset HEAD
 	updatedev=!sh -c 'git cod && git p && git co -'
 [color]
 	branch = auto
@@ -35,8 +36,9 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-	pager = less
+	pager = diff-so-fancy | less --tabs=4 -RFX
 	autocrlf = input
+	whitespace = warn
 [diff]
     renameLimit = 999999
     tool = meld
