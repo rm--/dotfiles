@@ -49,6 +49,7 @@ alias ..='cd ..'
 alias rg='rg --hidden'
 alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
+alias ytdl='youtube-dl'
 
 function mkcd(){
       mkdir -p "$1" && cd "$1"
