@@ -71,5 +71,3 @@
 		commit-title:graph=v2,refs=yes
 	ignore-case = true
 	line-graphics = utf-8
-[sequence]
-	editor = rebase-editor
