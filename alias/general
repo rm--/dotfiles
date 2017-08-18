@@ -62,3 +62,8 @@ function nb() {
         BRANCHNAME=$(echo "$1"-"$BRANCHNAME")
         git checkout -b "$BRANCHNAME" develop
 }
+
+# run mvn test for single test class ($1=<test class>) or single test method in test class $1=<test class#test method>
+function mst() {
+        mvn clean -Dtest="$1" test
+}
