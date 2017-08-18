@@ -73,3 +73,5 @@
 	line-graphics = utf-8
 [rerere]
 	enabled = true
+[mergetool]
+	keepBackup = false
