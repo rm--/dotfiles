@@ -52,6 +52,7 @@ alias rg='rg --hidden'
 alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
 alias ytdl='youtube-dl'
+alias showhosts='rg --context 2 HostName ~/.ssh/config'
 
 function mkcd(){
       mkdir -p "$1" && cd "$1"
