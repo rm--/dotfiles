@@ -45,7 +45,7 @@ function gpgd {
 }
 
 # other
-alias ..='cd ..'
+alias ..='cd_up'
 alias ls='exa'
 alias ll='exa -l'
 alias rg='rg --hidden'
@@ -53,6 +53,12 @@ alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
 alias ytdl='youtube-dl'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
+
+# cd .. multiple times
+function cd_up() {
+  cd $(printf "%0.s../" $(seq 1 $1 ))
+}
+
 
 function mkcd(){
       mkdir -p "$1" && cd "$1"
