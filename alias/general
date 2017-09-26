@@ -66,10 +66,12 @@ function mkcd(){
 
 # git checkout new branch from $1 as issue tag and $2 as issue name.
 function nb() {
-        local BRANCHNAME
-        BRANCHNAME=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
-        BRANCHNAME=$(echo "$1"-"$BRANCHNAME")
-        git checkout -b "$BRANCHNAME" develop
+        local BRANCHNAME_DEST
+        local BRANCHNAME_SRC
+        BRANCHNAME_DEST=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
+        BRANCHNAME_DEST=$(echo "$1"-"$BRANCHNAME_DEST")
+        BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
+        git checkout -b "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
 }
 
 # run mvn test for single test class ($1=<test class>) or single test method in test class $1=<test class#test method>
