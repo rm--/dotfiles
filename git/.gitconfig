@@ -40,6 +40,7 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	autocrlf = input
 	whitespace = warn
+	hooksPath = ~/used_projects/dotfiles/git/hooks/
 [diff]
     renameLimit = 999999
     tool = meld

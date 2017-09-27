@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Extact issue tag (e.g. feature/TAG-123 -> TAG-123, ANOTHERTAG-123-description -> ANOTHERTAG-123)
+fetch_issue_tag() {
+  git rev-parse --abbrev-ref HEAD | grep -e '[A-Z]\+-[0-9]\+' -o
+}
+
+BRANCH_NAME=$( git branch | grep '*' | sed 's/* //' )
+ISSUE_TAG=$( fetch_issue_tag )
+FIRSTLINE="$( head -n 1 "$1" )"
+BODY="$( tail -n +2  "$1" )"
+
+# Skip editing the commit message when rebasing.
+if [[ "$BRANCH_NAME" != '(no branch'* ]]
+then
+    # Append the issue tag if the issue tag is in the branch
+    # and not already in the commit message.
+    if [[ -z "${FIRSTLINE//}" ]]
+    then
+        if [[ -n "$ISSUE_TAG" ]]
+        then
+            NEW_MESSAGE="$ISSUE_TAG \n$BODY"
+            printf "$NEW_MESSAGE" > "$1"
+        else
+            NEW_MESSAGE="# Issue tag? \n$BODY"
+            printf "$NEW_MESSAGE" > "$1"
+        fi
+    fi
+fi
