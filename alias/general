@@ -46,8 +46,8 @@ function gpgd {
 
 # other
 alias ..='cd_up'
-alias ls='exa'
-alias ll='exa -l'
+alias ls='exa -all'
+alias ll='exa --all --long'
 alias rg='rg --hidden'
 alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
