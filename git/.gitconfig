@@ -8,6 +8,7 @@
 	cp = cherry-pick
 	df = diff
 	dfc = diff --cached
+	f = fetch
 	glog = log --all --graph --decorate
 	in = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate HEAD..FETCH_HEAD'
 	ll = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit
