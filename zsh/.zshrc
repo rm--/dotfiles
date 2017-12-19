@@ -4,6 +4,9 @@ ZSH_THEME="zsh_prompt_theme"
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# show !: or ^ command results before execution
+setopt histverify
+
 # Path to your dotfiles
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
