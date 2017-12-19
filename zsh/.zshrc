@@ -27,8 +27,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # bind keys for word jumping
 bindkey -e
-bindkey '^[^[[C' forward-word
-bindkey '^[^[[D' backward-word
 bindkey '^[[3~' delete-char
 
 eval "$(thefuck --alias)"
