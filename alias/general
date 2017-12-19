@@ -46,6 +46,7 @@ function gpgd {
 
 # other
 alias ..='cd_up'
+alias dco='docker-compose'
 alias ls='exa -all'
 alias ll='exa --all --long'
 alias rg='rg --hidden'
