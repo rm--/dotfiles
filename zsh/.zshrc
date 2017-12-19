@@ -29,7 +29,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 bindkey -e
 bindkey '^[[3~' delete-char
 
-eval "$(thefuck --alias)"
+eval $(thefuck --alias --enable-experimental-instant-mode)
 
 # set env variables
 export EDITOR=vim
