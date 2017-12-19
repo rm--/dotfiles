@@ -52,7 +52,7 @@ source $DOT_FILES_DIR'/alias/general'
 
 # golang
 export GOPATH="${HOME}/.go"
-export PATH=${PATH}:/usr/local/go/bin
+export PATH=${PATH}:${GOPATH//://bin:}/bin
 
 # haskell
 export PATH=~/.local/bin:$PATH
