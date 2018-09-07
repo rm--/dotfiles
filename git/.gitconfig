@@ -25,7 +25,6 @@
 	sapply = !sh -c 'git stash apply stash^{/$*}' -
 	slist = stash list
 	slog = log --all --graph --decorate --pretty=oneline
-	ssave = !sh -c 'git stash save "${1}"' -
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -uall
 	unstage = reset HEAD
