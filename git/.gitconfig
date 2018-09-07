@@ -29,6 +29,8 @@
 	st = status -uall
 	unstage = reset HEAD
 	updatedev=!sh -c 'git cod && git p && git co -'
+[init]
+    templatedir = ~/used_projects/dotfiles/git/templates
 [color]
 	branch = auto
 	diff = auto
@@ -40,7 +42,6 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	autocrlf = input
 	whitespace = warn
-	hooksPath = ~/used_projects/dotfiles/git/hooks/
 [diff]
     renameLimit = 999999
     tool = meld
