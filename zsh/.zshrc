@@ -68,6 +68,7 @@ export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects
 source /usr/local/bin/virtualenvwrapper.sh
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
 
 ## pyenv
 export PATH=~/.pyenv/shims:~/.pyenv/bin:$PATH
