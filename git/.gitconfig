@@ -26,7 +26,7 @@
 	slist = stash list
 	slog = log --all --graph --decorate --pretty=oneline
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
-	st = status -uall
+	st = status -s
 	unstage = reset HEAD
 	updatedev=!sh -c 'git cod && git p && git co -'
 [init]
