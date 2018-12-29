@@ -64,20 +64,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
 
 # python
-## virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/projects
-source /usr/local/bin/virtualenvwrapper.sh
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
-
-## pyenv
-export PATH=~/.pyenv/shims:~/.pyenv/bin:$PATH
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-if which pyenv > /dev/null; then
-  eval "$(pyenv init -)";
-  pyenv virtualenvwrapper
-fi
-
 # colorized man pages
 man() {
   env \
