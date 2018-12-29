@@ -113,15 +113,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+###### start of custom part
 
-#color highlighting of the search string in the outputs of grep
+# color highlighting of the search string in the outputs of grep
 export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='36' 
-
+export GREP_COLOR='36'
 export TERM=xterm-256color
 
-source ../alias/alias
+# Path to dotfiles
+DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
-
-
+# load aliases
+if [ "$(uname -a | grep -i darwin)" ]; then
+    source $DOT_FILES_DIR/'alias/macOs'
+elif [ "$(uname -a | grep -i linux)" ]; then
+    source $DOT_FILES_DIR/'alias/linux'
 fi
+source $DOT_FILES_DIR'/alias/general'
