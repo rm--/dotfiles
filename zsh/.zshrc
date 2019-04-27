@@ -10,6 +10,8 @@ setopt histverify
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
 ## zsh
+source $DOT_FILES_DIR'/zsh/'antigen.zsh
+source $DOT_FILES_DIR'/zsh/'.antigenrc
 
 
 # completion

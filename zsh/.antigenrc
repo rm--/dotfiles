@@ -1,0 +1,19 @@
+antigen bundle <<EOBUNDLES
+    # Bundles from the default repo (robbyrussell's oh-my-zsh)
+    git
+
+    # Syntax highlighting bundle.
+    zsh-users/zsh-syntax-highlighting
+
+    # Fish-like auto suggestions
+    zsh-users/zsh-autosuggestions
+
+    # Extra zsh completions
+    zsh-users/zsh-completions
+EOBUNDLES
+
+
+# workaround (remove if fixed) https://github.com/zsh-users/zsh-autosuggestions/issues/422
+typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE='20'
+ 
+antigen apply
