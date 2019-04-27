@@ -13,6 +13,8 @@ DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 source $DOT_FILES_DIR'/zsh/'antigen.zsh
 source $DOT_FILES_DIR'/zsh/'.antigenrc
 
+# prompt customization
+source $DOT_FILES_DIR'/zsh/'.spaceship-prompt
 
 # completion
 ## docker

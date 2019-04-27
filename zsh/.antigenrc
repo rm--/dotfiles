@@ -1,3 +1,5 @@
+antigen theme denysdovhan/spaceship-prompt
+
 antigen bundle <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
     git
