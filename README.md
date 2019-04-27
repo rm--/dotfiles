@@ -10,7 +10,7 @@
 
 ## Clone the repository
 
-`git clone --recursive https://github.com/rm--/dotfiles`
+`git clone https://github.com/rm--/dotfiles`
 
 ## Installation (without backup)
 
