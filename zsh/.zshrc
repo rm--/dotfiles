@@ -1,6 +1,5 @@
 #!/usr/local/bin/zsh
 
-ZSH_THEME="zsh_prompt_theme"
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
@@ -10,15 +9,10 @@ setopt histverify
 # Path to dotfiles
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
-source $DOT_FILES_DIR'/zsh/'$ZSH_THEME
-
-# command-line completion
 ## zsh
-plugins=(… $DOT_FILES_DIR'/zsh/submodules/zsh-completions')
 
-source $DOT_FILES_DIR'/zsh/submodules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-source $DOT_FILES_DIR'/zsh/submodules/zsh-autosuggestions/zsh-autosuggestions.zsh'
 
+# completion
 ## docker
 fpath=(${DOT_FILES_DIR}/zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -39,5 +33,5 @@ elif [ "$(uname -a | grep -i linux)" ]; then
 fi
 source $DOT_FILES_DIR'/alias/general'
 
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
