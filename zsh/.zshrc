@@ -3,8 +3,9 @@
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# show !: or ^ command results before execution
-setopt histverify
+setopt histverify         # show !: or ^ command results before execution
+setopt append_history     # append instead of overwrite
+setopt share_history      # share history between terminals
 
 # Path to dotfiles
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
