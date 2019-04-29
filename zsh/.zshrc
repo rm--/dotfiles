@@ -11,8 +11,10 @@ setopt share_history      # share history between terminals
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
 ## zsh
-source $DOT_FILES_DIR'/zsh/'antigen.zsh
-source $DOT_FILES_DIR'/zsh/'.antigenrc
+
+# use the follwing command to update the static bundles
+#antibody bundle < $DOT_FILES_DIR'/zsh/.zsh_plugins.txt' > ~/.zsh_plugins.sh
+source ~/.zsh_plugins.sh
 
 # prompt customization
 source $DOT_FILES_DIR'/zsh/'.spaceship-prompt
