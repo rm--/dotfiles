@@ -2,4 +2,4 @@ denysdovhan/spaceship-prompt
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
-
+ael-code/zsh-colored-man-pages
