@@ -46,13 +46,16 @@ function gpgd {
 
 # other
 alias ..='cd_up'
+alias code="code-insiders"
+alias d='docker'
 alias dco='docker-compose'
+alias inet='ping heise.de'
+alias kc='kubectl'
 alias ll='exa --all --long'
 alias rg='rg --hidden'
-alias inet='ping heise.de'
 alias sc='shellcheck -s bash'
-alias ytdl='youtube-dl'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
+alias ytdl='youtube-dl'
 
 # cd .. multiple times
 function cd_up() {
