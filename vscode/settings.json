@@ -1,0 +1,28 @@
+{
+  "editor.fontSize": 14,
+  "editor.renderWhitespace": "all",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "window.title": "${activeEditorLong}",
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.startupEditor": "newUntitledFile",
+  "sublimeTextKeymap.promptV3Features": true,
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnPaste": true,
+  "breadcrumbs.enabled": true,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.enableExperiments": false,
+  "extensions.ignoreRecommendations": false,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "FiraCode-Retina",
+  "terminal.integrated.fontWeight": "500",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+}
