@@ -1,7 +1,8 @@
 [alias]
-    aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+	aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
 	amend = commit -a --amend --no-edit
 	branches = branch -avv
+	cf = commit --fixup
 	co = checkout
 	cod = checkout develop
 	com = checkout master
@@ -15,6 +16,7 @@
 	lla = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit --all
 	lls = log --graph --decorate --pretty=format:'%C(red)%h  %C(yellow)%ad %C(red)%d%C(reset) %s %C(blue)[%an]' --abbrev-commit --date=short --all --simplify-by-decoration
 	mt = mergetool
+	ma = merge --abort
 	nlog = log --name-status
 	out = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate FETCH_HEAD..HEAD'
 	p = pull
@@ -22,15 +24,22 @@
 	ppp = !sh -c 'git push -n && git diff origin `git rev-parse --abbrev-ref HEAD`'
 	remotes = remote -v
 	rb = rebase
+	rw = commit --amend
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = !sh -c \"git rebase -i HEAD~$1\" -
+	rbm = !sh -c 'git checkout master && git pull && git checkout - && git rebase master'
+	review = !sh -c \"git checkout origin/$1\" 
 	sapply = !sh -c 'git stash apply stash^{/$*}' -
 	slist = stash list
 	slog = log --all --graph --decorate --pretty=oneline
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -s
 	unstage = reset HEAD
-	updatedev=!sh -c 'git cod && git p && git co -'
+	updated=!sh -c 'git checkout develop && git pull && git checkout -'
+	updatem=!sh -c 'git checkout master && git pull && git checkout -'
 [init]
-    templatedir = ~/used_projects/dotfiles/git/templates
+	templatedir = ~/used_projects/dotfiles/git/templates
 [color]
 	branch = auto
 	diff = auto
@@ -43,33 +52,28 @@
 	autocrlf = input
 	whitespace = warn
 [diff]
-    renameLimit = 999999
-    tool = meld
-[difftool "meld"]
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
-    trustExitCode = false
+	renameLimit = 999999
 [merge]
-    conflictstyle = diff3
-    renameLimit = 999999
-    tool = meld
-[mergetool "meld"]
-    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+	conflictstyle = diff3
+	renameLimit = 999999
 [push]
 	default = current
 [user]
 	email = rmuhl@mailbox.org
 	name = René Muhl
 [transfer]
-    fsckobjects = true
+	fsckobjects = true
 [fetch]
-    fsckobjects = true
+	fsckobjects = true
 [receive]
-    fsckObjects = true
+	fsckObjects = true
+[rebase]
+	autosquash = true
 [tig]
 	main-view = \
 		date:default \
-		id:yes,color \
 		author:full \
+		id:yes,color \
 		commit-title:graph=v2,refs=yes
 	ignore-case = true
 	line-graphics = utf-8
@@ -77,7 +81,7 @@
 	enabled = true
 [mergetool]
 	keepBackup = false
-[rebase]
-	autosquash = true
 [branch]
 	autosetuprebase = always
+[url "git@github.com:"]
+	insteadOf = https://github.com/
