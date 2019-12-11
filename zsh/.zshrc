@@ -6,6 +6,7 @@ HISTFILE=~/.zsh_history
 setopt histverify         # show !: or ^ command results before execution
 setopt append_history     # append instead of overwrite
 setopt share_history      # share history between terminals
+setopt auto_cd            # cd by typing directory name if it's not a command
 
 # Path to dotfiles
 DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
