@@ -193,3 +193,6 @@ typings/
 # End of https://www.gitignore.io/api/node
 
 .scalafmt.conf
+
+# to ignore files in .git with ripgrep: https://github.com/BurntSushi/ripgrep/issues/1040
+.git/
