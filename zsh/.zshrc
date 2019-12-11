@@ -28,6 +28,8 @@ autoload -Uz compinit && compinit -i
 # bind keys for word jumping
 bindkey -e
 bindkey '^[[3~' delete-char
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
 
