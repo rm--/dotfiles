@@ -7,6 +7,9 @@
 	cod = checkout develop
 	com = checkout master
 	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cps = cherry-pick --skip
 	df = diff
 	dfc = diff --cached
 	f = fetch
@@ -29,6 +32,7 @@
 	rbc = rebase --continue
 	rbi = !sh -c \"git rebase -i HEAD~$1\" -
 	rbm = !sh -c 'git checkout master && git pull && git checkout - && git rebase master'
+	rbs = rebase --skip
 	review = !sh -c \"git checkout origin/$1\" 
 	sapply = !sh -c 'git stash apply stash^{/$*}' -
 	slist = stash list
