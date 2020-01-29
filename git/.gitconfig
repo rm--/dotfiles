@@ -81,6 +81,11 @@
 		commit-title:graph=v2,refs=yes
 	ignore-case = true
 	line-graphics = utf-8
+[tig "bind"]
+    main = R !git rebase -i %(commit)^
+    main = F !git commit --fixup %(commit)
+    diff = R !git rebase -i %(commit)^
+    diff = F !git commit --fixup %(commit)
 [rerere]
 	enabled = true
 [mergetool]
