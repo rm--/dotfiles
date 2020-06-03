@@ -1,5 +1,4 @@
 [alias]
-	aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
 	amend = commit -a --amend --no-edit
 	branches = branch -avv
 	cf = commit --fixup
@@ -13,6 +12,7 @@
 	df = diff
 	dfc = diff --cached
 	f = fetch
+	fix = commit --amend --no-edit
 	glog = log --all --graph --decorate
 	in = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate HEAD..FETCH_HEAD'
 	ll = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit
