@@ -73,6 +73,7 @@
 	fsckObjects = true
 [rebase]
 	autosquash = true
+	autostash = true
 [tig]
 	main-view = \
 		date:default \
