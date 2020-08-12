@@ -65,7 +65,7 @@
 [push]
 	default = current
 [user]
-	email = rmuhl@mailbox.org
+	email = rmuhl@exa-online.com
 	name = René Muhl
 [transfer]
 	fsckobjects = true
