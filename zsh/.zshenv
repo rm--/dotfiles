@@ -27,9 +27,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # javascript
 export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
 
-# python
-export PATH=$HOME/Library/Python/3.7/bin:$PATH
-
 ## rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
