@@ -21,7 +21,7 @@ export PATH=~/go/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
 # java
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 # javascript
 export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
