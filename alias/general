@@ -55,6 +55,7 @@ alias ll='exa --all --long'
 alias rg='rg --hidden'
 alias sc='shellcheck -s bash'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
+alias wttr='curl wttr.in/Leipzig'
 alias ytdl='youtube-dl'
 
 # cd .. multiple times
