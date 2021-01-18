@@ -44,4 +44,3 @@ fi
 source $DOT_FILES_DIR'/alias/general'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

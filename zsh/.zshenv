@@ -29,4 +29,3 @@ export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
 
 ## rust
 export PATH="$HOME/.cargo/bin:$PATH"
-
