@@ -39,6 +39,7 @@
 	slog = log --all --graph --decorate --pretty=oneline
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -s
+	sw = switch
 	unstage = reset HEAD
 	updated=!sh -c 'git checkout develop && git pull && git checkout -'
 	updatem=!sh -c 'git checkout master && git pull && git checkout -'
