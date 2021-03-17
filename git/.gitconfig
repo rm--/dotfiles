@@ -45,6 +45,7 @@
 	updatem=!sh -c 'git checkout master && git pull && git checkout -'
 [init]
 	templatedir = ~/used_projects/dotfiles/git/templates
+	defaultBranch = master
 [color]
 	branch = auto
 	diff = auto
