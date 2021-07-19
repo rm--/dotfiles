@@ -26,7 +26,8 @@
 	rba = rebase --abort
 	rbc = rebase --continue
 	rbi = !sh -c \"git rebase -i HEAD~$1\" -
-	rbm = !sh -c 'git switch master && git pull && git switch - && git rebase master'
+	rbm = !sh -c 'git switch main && git pull && git switch - && git rebase main'
+	rbm2 = !sh -c 'git switch master && git pull && git switch - && git rebase master'
 	rbs = rebase --skip
 	review = !sh -c \"git checkout origin/$1\"
 	sapply = !sh -c 'git stash apply stash^{/$*}' -
@@ -36,10 +37,10 @@
 	st = status -s
 	sw = switch
 	swd = switch develop
-	swm = sw master
+	swm = sw main
 [init]
 	templatedir = ~/used_projects/dotfiles/git/templates
-	defaultBranch = master
+	defaultBranch = main
 [color]
 	branch = auto
 	diff = auto
