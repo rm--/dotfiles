@@ -34,6 +34,8 @@ bindkey '^[[B' history-substring-search-down
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
 
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
 
 # load aliases
 if [ "$(uname -a | grep -i darwin)" ]; then
