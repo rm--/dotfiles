@@ -14,14 +14,11 @@
 	f = fetch
 	fix = commit --amend --no-edit
 	glog = log --all --graph --decorate
-	in = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate HEAD..FETCH_HEAD'
 	ll = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit
 	lla = log --pretty=format:'%C(yellow)%h  %C(reset)%s %C(red)%d%C(green)[%cr] %C(blue)[%cn]' --graph --decorate --abbrev-commit --all
 	lls = log --graph --decorate --pretty=format:'%C(red)%h  %C(yellow)%ad %C(red)%d%C(reset) %s %C(blue)[%an]' --abbrev-commit --date=short --all --simplify-by-decoration
-	mt = mergetool
 	ma = merge --abort
 	nlog = log --name-status
-	out = !sh -c 'git fetch && git log --graph --boundary --left-right --cherry-pick --decorate FETCH_HEAD..HEAD'
 	p = pull
 	pp = !sh -c 'git push -n && git diff --stat origin `git rev-parse --abbrev-ref HEAD`'
 	ppp = !sh -c 'git push -n && git diff origin `git rev-parse --abbrev-ref HEAD`'
@@ -40,9 +37,6 @@
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -s
 	sw = switch
-	unstage = reset HEAD
-	updated=!sh -c 'git checkout develop && git pull && git checkout -'
-	updatem=!sh -c 'git checkout master && git pull && git checkout -'
 [init]
 	templatedir = ~/used_projects/dotfiles/git/templates
 	defaultBranch = master
