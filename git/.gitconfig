@@ -22,6 +22,7 @@
 	ppp = !sh -c 'git push -n && git diff origin `git rev-parse --abbrev-ref HEAD`'
 	remotes = remote -v
 	rb = rebase
+	rs = restore .
 	rw = commit --amend
 	rba = rebase --abort
 	rbc = rebase --continue
