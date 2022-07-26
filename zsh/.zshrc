@@ -26,9 +26,9 @@ fpath=(${DOT_FILES_DIR}/zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 
-# bind keys for word jumping
 bindkey -e
 bindkey '^[[3~' delete-char
+bindkey '^D' kill-word
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
