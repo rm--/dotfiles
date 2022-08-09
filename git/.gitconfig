@@ -3,6 +3,9 @@
 	branches = branch -avv
 	cf = commit --fixup
 	co = checkout
+  # if git-extras is installed, please remove /usr/local/bin/git-cp
+  # otherwise the alias will be overriden by git-extras' git cp
+  # see https://github.com/tj/git-extras/issues/442
 	cp = cherry-pick
 	cpa = cherry-pick --abort
 	cpc = cherry-pick --continue
