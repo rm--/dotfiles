@@ -14,6 +14,9 @@ export LANG=en_US.UTF-8
 # find binaries in other directories
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# go
+export PATH=~/go/bin:$PATH
+
 # haskell
 export PATH=~/.local/bin:$PATH
 
