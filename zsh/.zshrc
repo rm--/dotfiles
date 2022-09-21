@@ -19,9 +19,6 @@ source /usr/local/opt/antidote/share/antidote/antidote.zsh
 #antidote bundle < $DOT_FILES_DIR'/zsh/.zsh_plugins.txt' > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
 
-# prompt customization
-source $DOT_FILES_DIR'/zsh/'.spaceship-prompt
-
 # completion
 ## docker
 fpath=(${DOT_FILES_DIR}/zsh/completion $fpath)
@@ -33,6 +30,8 @@ bindkey '^[[3~' delete-char
 bindkey '^D' kill-word
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+eval "$(starship init zsh)"
 
 eval $(thefuck --alias --enable-experimental-instant-mode)
 
