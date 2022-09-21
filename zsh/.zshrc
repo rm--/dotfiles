@@ -19,6 +19,8 @@ source /usr/local/opt/antidote/share/antidote/antidote.zsh
 #antidote bundle < $DOT_FILES_DIR'/zsh/.zsh_plugins.txt' > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
 
+export STARSHIP_CONFIG=${DOT_FILES_DIR}/zsh/starship.toml
+
 # completion
 ## docker
 fpath=(${DOT_FILES_DIR}/zsh/completion $fpath)

@@ -1,0 +1,35 @@
+# https://starship.rs/config/#prompt
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# fixes https://github.com/starship/starship/discussions/4181
+command_timeout	= 1000
+
+# move time also on the first line
+format = "$time $all"
+
+[character]
+success_symbol = "[➜](bold green)"
+
+[directory]
+style	= "blue"
+truncate_to_repo = false
+
+[git_branch]
+style	= "red"
+
+[git_commit]
+commit_hash_length = 8
+format = "[\\[$hash$tag\\]]($style) "
+only_detached = false
+style	= "red"
+
+[git_status]
+style	= "red"
+
+[time]
+disabled = false
+format = '[ $time]($style)'
+style = "yellow"
+time_format = "%T"
+utc_time_offset = "+2"
