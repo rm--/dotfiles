@@ -13,8 +13,10 @@ DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 
 ## zsh
 
+source /usr/local/opt/antidote/share/antidote/antidote.zsh
+
 # use the follwing command to update the static bundles
-#antibody bundle < $DOT_FILES_DIR'/zsh/.zsh_plugins.txt' > ~/.zsh_plugins.sh
+#antidote bundle < $DOT_FILES_DIR'/zsh/.zsh_plugins.txt' > ~/.zsh_plugins.sh
 source ~/.zsh_plugins.sh
 
 # prompt customization
