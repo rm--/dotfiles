@@ -41,11 +41,6 @@ eval $(thefuck --alias --enable-experimental-instant-mode)
 eval "$(zoxide init zsh)"
 
 # load aliases
-if [ "$(uname -a | grep -i darwin)" ]; then
-    source $DOT_FILES_DIR/'alias/macOs'
-elif [ "$(uname -a | grep -i linux)" ]; then
-    source $DOT_FILES_DIR/'alias/linux'
-fi
-source $DOT_FILES_DIR'/alias/general'
+source $DOT_FILES_DIR/aliases.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

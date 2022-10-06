@@ -1,6 +1,8 @@
 #!/bin/sh
 
 alias ..='cd_up'
+alias bi='brew install'
+alias bubu='brew update && brew upgrade'
 alias d='docker'
 alias dco='docker-compose'
 alias g='git'
@@ -10,9 +12,13 @@ alias kc='kubectl'
 alias kcx='kubectx'
 alias ll='exa --all --long'
 alias mk='minikube'
+alias pip=/usr/local/bin/pip3
 alias py='python'
 alias py3='python3'
+alias python=/usr/local/bin/python3
 alias rg='rg --hidden'
+# common lisp readline support
+alias sbcl='rlwrap sbcl'
 alias sc='shellcheck -s bash'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
 alias t='tig'
