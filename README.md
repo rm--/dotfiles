@@ -4,12 +4,9 @@
 
 `make install`
 
-# inspired by these dotfiles
+# inspired by
 
 * [Andreas Linz](https://github.com/klingtnet/dotfiles)
 * [Mark Nichols](https://github.com/zanshin/dotfiles)
-* [Markus Zapke-Gründemann](https://bitbucket.org/keimlink/dotfiles)
-* [Steve Losh](https://bitbucket.org/sjl/dotfiles)
-
-
-License: MIT, for details see LICENSE.txt
+* Markus Zapke-Gründemann
+* Steve Losh
