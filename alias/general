@@ -67,6 +67,11 @@ function cd_up() {
 }
 
 
+function drit() {
+  docker run --interactive --tty "$1" /bin/bash
+}
+
+
 function mkcd(){
       mkdir -p "$1" && cd "$1"
 }
