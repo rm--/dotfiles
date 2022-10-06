@@ -57,6 +57,7 @@ alias mk='minikube'
 alias rg='rg --hidden'
 alias sc='shellcheck -s bash'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
+alias tmp='cd /tmp'
 alias wttr='curl wttr.in/Leipzig'
 alias ytdl='youtube-dl'
 
