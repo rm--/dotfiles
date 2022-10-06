@@ -1,92 +1,58 @@
 #!/bin/sh
 
-# java
-## clone and build from https://github.com/albertlatacz/java-repl
-alias javarepl='java -jar ~/used_projects/java-repl/build/libs/javarepl-dev.jar'
-
-# haskell
-alias yd='yesod devel'
-
-# python
-alias py='python'
-alias py3='python3'
-alias precommit='tox -e isort,flake8'
-
-# git
-alias g='git'
-alias t='tig'
-remove_local_merged_branches(){
-  local red=$(tput setaf 1)
-  local green=$(tput setaf 2)
-  local bold=$(tput bold)
-  local reset=$(tput sgr0)
-
-  local current_branch=$(git rev-parse --abbrev-ref HEAD)
-  for branch in $(git branch --merged | cut -c3-)
-    do
-      if [[ $branch = "$current_branch" ]]; then
-        continue
-      fi
-      echo "Branch ${bold}$branch${reset} is already merged into ${bold}$current_branch${reset}."
-      echo "Would you like to delete it? ${green}[Y]es${reset}/${red}[N]o${reset} "
-      read -r REPLY
-      if [[ $REPLY =~ ^[Yy] ]]; then
-        git branch -d "$branch"
-      fi
-  done
-}
-
-# gpg
-function gpge {
-  gpg --encrypt -a --recipient "$1" "$2"
-}
-function gpgd {
-  gpg --decrypt "$1"
-}
-
-# other
 alias ..='cd_up'
 alias d='docker'
 alias dco='docker-compose'
+alias g='git'
 alias inet='ping heise.de'
 alias k='kubectl'
 alias kc='kubectl'
 alias kcx='kubectx'
 alias ll='exa --all --long'
 alias mk='minikube'
+alias py='python'
+alias py3='python3'
 alias rg='rg --hidden'
 alias sc='shellcheck -s bash'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
+alias t='tig'
 alias tmp='cd /tmp'
-alias wttr='curl wttr.in/Leipzig'
 alias ytdl='youtube-dl'
 
+
 # cd .. multiple times
-function cd_up() {
+function cd_up {
   cd $(printf "%0.s../" $(seq 1 $1 ))
 }
 
-
-function drit() {
+function drit {
   docker run --interactive --tty "$1" /bin/bash
 }
 
-
-function mkcd(){
-      mkdir -p "$1" && cd "$1"
+# gpg
+function gpge {
+  gpg --encrypt -a --recipient "$1" "$2"
 }
 
-# git checkout new branch from $1 as issue tag and $2 as issue name.
-function nb() {
-        local BRANCHNAME_DEST
-        local BRANCHNAME_SRC
-        BRANCHNAME_DEST=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
-        BRANCHNAME_DEST=$(echo "$1"-"$BRANCHNAME_DEST")
-        BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
-        git switch -c "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
+function gpgd {
+  gpg --decrypt "$1"
+}
+
+function mkcd {
+  mkdir -p "$1" && cd "$1"
 }
 
 # run mvn test for single test class ($1=<test class>) or single test method in test class $1=<test class#test method>
 function mst() {
-        mvn clean -Dtest="$1" test
+  mvn clean -Dtest="$1" test
+}
+
+# git checkout new branch from $1 as issue tag and $2 as issue name.
+function nb {
+  local BRANCHNAME_DEST
+  local BRANCHNAME_SRC
+  BRANCHNAME_DEST=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
+  BRANCHNAME_DEST=$(echo "$1"-"$BRANCHNAME_DEST")
+  BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
+  git switch -c "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
 }
