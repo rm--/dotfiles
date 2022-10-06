@@ -3,7 +3,7 @@
 add_newline = false
 
 # fixes https://github.com/starship/starship/discussions/4181
-command_timeout	= 1000
+command_timeout	= 2000
 
 # move time also on the first line
 format = "$time $all"
