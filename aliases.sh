@@ -56,10 +56,7 @@ function mst() {
 
 # git checkout new branch from $1 as issue tag and $2 as issue name.
 function nb {
-  local BRANCHNAME_DEST
-  local BRANCHNAME_SRC
-  BRANCHNAME_DEST=$(echo "$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
-  BRANCHNAME_DEST=$(echo "$1"-"$BRANCHNAME_DEST")
+  BRANCHNAME_DEST=$(echo "$1"-"$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
   BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
   git switch -c "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
 }
