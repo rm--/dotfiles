@@ -28,34 +28,34 @@ alias ytdl='youtube-dl'
 
 
 # cd .. multiple times
-function cd_up {
-  cd $(printf "%0.s../" $(seq 1 $1 ))
+cd_up() {
+  cd "$(printf "%0.s../" $(seq 1 "$1" ))" || exit
 }
 
-function drit {
-  docker run --interactive --tty "$1" /bin/bash
+drit() {
+  docker run --interactive --tty "$1" /bin/sh
 }
 
 # gpg
-function gpge {
+gpge() {
   gpg --encrypt -a --recipient "$1" "$2"
 }
 
-function gpgd {
+gpgd() {
   gpg --decrypt "$1"
 }
 
-function mkcd {
-  mkdir -p "$1" && cd "$1"
+mkcd() {
+  mkdir -p "$1" && cd "$1" || exit
 }
 
 # run mvn test for single test class ($1=<test class>) or single test method in test class $1=<test class#test method>
-function mst() {
+mst() {
   mvn clean -Dtest="$1" test
 }
 
 # git checkout new branch from $1 as issue tag and $2 as issue name.
-function nb {
+nb() {
   BRANCHNAME_DEST=$(echo "$1"-"$2" | tr '[:upper:]' '[:lower:]' | sed -e "s/ /-/g; s/://g; s/ä/ae/g; s/ö/oe/g; s/ü/ue/g; s/ß/ss/g;")
   BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
   git switch -c "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
