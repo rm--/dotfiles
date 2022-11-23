@@ -3,6 +3,7 @@
 alias ..='cd_up'
 alias bi='brew install'
 alias bubu='brew update && brew upgrade'
+alias c='code'
 alias d='docker'
 alias dco='docker-compose'
 alias g='git'
