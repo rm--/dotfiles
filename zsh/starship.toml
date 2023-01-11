@@ -32,4 +32,3 @@ disabled = false
 format = '[ $time]($style)'
 style = "yellow"
 time_format = "%T"
-utc_time_offset = "+2"
