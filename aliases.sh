@@ -29,7 +29,7 @@ alias ytdl='youtube-dl'
 
 # cd .. multiple times
 cd_up() {
-  cd "$(printf "%0.s../" $(seq 1 "$1" ))" || exit
+  cd "$(printf "%0.s../" $(seq 1 "${1:-1}" ))" || exit
 }
 
 drit() {
