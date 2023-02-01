@@ -22,6 +22,7 @@ export PATH=~/.local/bin:$PATH
 
 # java
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export PATH=$JAVA_HOME/bin:$PATH
 
 # javascript
 export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
