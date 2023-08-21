@@ -26,6 +26,11 @@ alias t='tig'
 alias tmp='cd /tmp'
 alias ytdl='youtube-dl'
 
+# k8s
+alias pd='kubectl delete -k .'
+alias po='kubectl get pods'
+alias pw='kubectl get pods -w'
+alias svc='kubectl get svc'
 
 # cd .. multiple times
 cd_up() {
