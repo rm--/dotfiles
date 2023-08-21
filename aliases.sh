@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 alias ..='cd_up'
 alias bi='brew install'
@@ -65,4 +65,23 @@ nb() {
   BRANCHNAME_DEST=$(echo "$1"-"$BRANCHNAME_DEST")
   BRANCHNAME_SRC=$(git rev-parse --abbrev-ref HEAD)
   git switch -c "$BRANCHNAME_DEST" "$BRANCHNAME_SRC"
+}
+
+cleanup_branches(){
+  local red="$(tput setaf 1)"
+  local green="$(tput setaf 2)"
+  local bold="$(tput bold)"
+  local reset="$(tput sgr0)"
+
+  local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+  for branch in $(git branch | grep --extended-regexp --invert-match "main|develop|$current_branch" | cut -c3-)
+    do
+      echo "Branch ${bold}$branch${reset} is already merged into ${bold}$current_branch${reset}."
+      echo "Would you like to delete it? ${green}[Y]es${reset}/${red}[N]o${reset} "
+      read -r REPLY
+      if [[ $REPLY =~ ^[Yy] ]]; then
+        git branch -D "$branch"
+        git push --delete origin "$branch"
+      fi
+  done
 }
