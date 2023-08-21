@@ -12,7 +12,7 @@ export LANG=en_US.UTF-8
 
 
 # find binaries in other directories
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # go
 export PATH=~/go/bin:$PATH
