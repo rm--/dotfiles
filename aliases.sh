@@ -13,10 +13,6 @@ alias gitroot=groot
 alias inet='ping heise.de'
 alias ll='eza --all --long'
 alias mk='minikube'
-alias pip=/usr/local/bin/pip3
-alias py='python'
-alias py3='python3'
-alias python=/usr/local/bin/python3
 alias rg='rg --hidden --glob '!.git/''
 # common lisp readline support
 alias sbcl='rlwrap sbcl'
