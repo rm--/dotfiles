@@ -27,5 +27,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 # javascript
 export PATH="./node_modules/.bin:$HOME/.npm-packages/bin:$PATH"
 
+## python
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
 ## rust
 export PATH="$HOME/.cargo/bin:$PATH"
