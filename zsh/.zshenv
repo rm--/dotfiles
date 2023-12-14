@@ -4,7 +4,7 @@ DOT_FILES_DIR=$HOME'/used_projects/dotfiles'
 # set env variables
 export EDITOR=vim
 export GIT_EDITOR=vim
-export SHELL=/usr/local/bin/zsh
+export SHELL=/bin/zsh
 export TERM=xterm-256color
 export VISUAL=vim
 export LC_ALL=en_US.UTF-8
