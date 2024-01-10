@@ -38,6 +38,11 @@ cd_up() {
   cd "$(printf "%0.s../" $(seq 1 "${1:-1}" ))" || exit
 }
 
+# cd to file paths directory
+cdf() {
+  cd $(dirname "$1")
+}
+
 drit() {
   docker run --interactive --tty "$1" /bin/sh
 }
