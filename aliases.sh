@@ -32,6 +32,9 @@ alias pd='kubectl delete -k .'
 alias po='kubectl get pods'
 alias pw='kubectl get pods -w'
 alias svc='kubectl get svc'
+alias svcw='kubectl get svc -w'
+alias sts='kubectl get sts'
+alias stsw='kubectl get sts -w'
 
 # cd .. multiple times
 cd_up() {
