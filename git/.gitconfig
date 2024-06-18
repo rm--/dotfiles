@@ -40,6 +40,7 @@
 	sshow = !sh -c 'git stash show stash^{/$*} -p' -
 	st = status -s
 	sw = switch
+	swf = !sh -c \"git branch | fzf --height=20% --reverse --info=inline | xargs git switch\"
 	swd = switch develop
 	swm = sw main
 [init]
