@@ -14,9 +14,6 @@ alias inet='ping heise.de'
 alias ll='eza --all --long'
 alias mk='minikube'
 alias rg='rg --hidden --glob '!.git/''
-# common lisp readline support
-alias sbcl='rlwrap sbcl'
-alias sc='shellcheck -s bash'
 alias showhosts='rg --context 2 HostName ~/.ssh/config'
 alias t='tig'
 alias treee='eza --tree'
@@ -57,15 +54,6 @@ gpge() {
 
 gpgd() {
   gpg --decrypt "$1"
-}
-
-mkcd() {
-  mkdir -p "$1" && cd "$1" || exit
-}
-
-# run mvn test for single test class ($1=<test class>) or single test method in test class $1=<test class#test method>
-mst() {
-  mvn clean -Dtest="$1" test
 }
 
 # git checkout new branch from $1 as issue tag and $2 as issue name.
